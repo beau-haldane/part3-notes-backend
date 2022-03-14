@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/notes/622d6d37459e74eb0bfef2c1
+Content-Type: application/json
+
+{
+    "content": "Validators are working",
+    "important": false
+}
