@@ -2,6 +2,7 @@ post http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-    "content": "lol",
-    "important": true
+    "content": "Beauie note test",
+    "important": true,
+    "userId": "6261f984a677bb3d6cddd875"
 }

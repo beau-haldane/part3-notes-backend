@@ -1,20 +1,19 @@
 const mongoose = require('mongoose')
 
-// Set schema for notes
 const noteSchema = new mongoose.Schema({
   content: {
     type: String,
-    minLength: 5,
-    required: true
+    required: true,
+    minlength: 5
   },
-  date: {
-    type: Date,
-    required: true
-  },
+  date: Date,
   important: Boolean,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 })
 
-// Format object returned by MongoDB
 noteSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString()
@@ -23,5 +22,4 @@ noteSchema.set('toJSON', {
   }
 })
 
-// Export module and return Mongo model
 module.exports = mongoose.model('Note', noteSchema)
